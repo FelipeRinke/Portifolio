@@ -1,0 +1,239 @@
+/* (*) serve para Todos os elementos */
+* {
+  /* ALINHA TUDO AO MEIO */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* PROGRAMAÇÂO PARA O MODO ESCURO */
+  --text-color: white;
+  --bg-url: url(../assets/bg-mobile-dark_1080x1920.jpg);
+  --border-button-color: rgba(255, 255, 255, 0.5);
+  --button-color: rgba(255, 255, 255, 0.05);
+  --button-color-hover: rgba(255, 255, 255, 0.02);
+  --social-links-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(../assets/moon-stars.svg);
+}
+
+
+.light {
+  /* PROGRAMAÇÂO PARA MODO CLARO */
+  /* CRIA UMA VARIAVEL DE COR */
+  --text-color: black;
+  --bg-url: url(../assets/bg-mobile-light_1080x1920.jpg);
+  --border-button-color: rgba(0, 0, 0, 0.5);
+  --button-color: rgba(0, 0, 0, 0.05);
+  --button-color-hover: rgba(0, 0, 0, 0.02);
+  --social-links-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(../assets/sun.svg);
+}
+
+body {
+  /* 
+  background-image: url(bg-mobile-dark_1080x1920.jpg) ;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;  */
+
+  /* INSERI UMA IMAGEM DE FUNDO */
+  background: var(--bg-url) no-repeat top center/cover;
+
+}
+
+/* body * serve para aplicar para todos os elementos */
+body * {
+  /* FONT E COR DA FONT DO SITE */
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  /* LARGURA CONTAINER */
+  width: 360px;
+
+  /* BORDA CONTAINER */
+  /* border: 1px solid red; */
+
+  /* ALINHAR CONTAINER NO MEIO */
+  margin: auto;
+
+  /* ALINHAMENTO do CONTAINER DO TOPO */
+  /* margin-top: 56px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto; */
+
+  /* ESSE DAQUI RESUME OS DE ACIMA */
+  margin: 56px auto 0px auto;
+
+  /* ESPAÇAMENTO DO CONTAINER - 0 cima e baixo e 24 lados esquerdo e direito */
+  padding: 0 24px;
+
+}
+
+#profile {
+  /* ALINHAR IMAGEM NO MEIO */
+  text-align: center;
+
+  /* ALINHAMENTO DA IMAGEM DO TOPO */
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+  /* ALINHAR IMAGEM NO CENTRO
+  display: block;
+  margin: auto; */
+  
+}
+
+#profile p {
+  /* ALINHAMENTO E ESPAÇAMENTO DO TEXTO */
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+
+
+}
+
+#switch {
+  /* ALINHAMENTO E DEFINIÇAO DE LARGURA */
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  /* DEFINE TAMANHO E COR E BORDA */
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  /* SOBREPOR ITENS e POSICIONAR*/
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button{
+  /* DEIXAR O SWITCH PARA O OUTRO LADO */
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--button-color);
+  border: 1px solid var(--border-button-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* LINKS */
+ul {
+  /* TIRAR OS TOPICOS */
+  list-style: none;
+
+  /* COLOCA OS ELEMENTOS UM ABAIXO DO OUTRO */
+  flex-direction: column;
+
+  /* ADAPTA FLEXIVELMENTE OS ELEMENTOS */
+  display: flex;
+
+  /* DISTANCIA LATERAL ENTRE UM E OUTRO */
+  gap: 16px;
+
+  /* DISTANCIA ENTRE OS BUTTONS E SOCIAL LINKS */
+  padding: 24px 0;
+}
+
+ul li a {
+  /* TIRAR TRAÇO DE LINKS */
+  text-decoration: none;
+
+  /* ADAPTA FLEXIVELMENTE OS ELEMENTOS */
+  display: flex;
+
+  /* ALINHA O A NO MEIO DA CAIXA (EIXO X) */
+  align-items: center;
+
+  /* ALINHA O CONTEUDO AO MEIO (EIXO Y) */
+  justify-content: center;
+
+  /* AJUSTA ALTURA DO UL LI */
+  height: 56px;
+  padding: 16px 24px;
+
+  /* COR E BORDA DAS CAIXAS */
+  background: var(--button-color);
+  border: 1px solid var(--border-button-color);
+  border-radius: 8px;
+
+  /* COLOCA UM EMBAÇADO */
+  /* backdrop-filter: blur(4px); */
+
+  /* GROSSURA DO TEXTO */
+  font-weight: 500;
+
+  /* DEIXAR A TRANSIÇAO MAIS SUAVE */
+  /* transition: all 0.5s; */
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  /* DEFINE A COR AO PASSAR O MOUSE */
+  background: var(--button-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* SOCIAIS LINKS */
+#social-links {
+  /* ALINHAR AO MEIO */
+  display: flex;
+  justify-content: center;
+
+  /* DISTANCIA DE CIMA */
+  padding: 24px 0;
+
+  /* TAMANHO DOS ICONS */
+  font-size: 30px;
+}
+
+#social-links a {
+  /* ALINHAR AO MEIO */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* DISTANCIA DE CIMA */
+  padding: 16px;
+
+  /* BORDA ARREDONDADA */
+  border-radius: 50%;
+
+  /* FAZ UMA TRANSIÇÂO SUAVE QUANDO TIRA O MOUSE DO OBJETO */
+  transition: background 0.2s;
+}
+
+#social-links a:hover {
+  /* DEFINE A COR AO PASSAR O MOUSE */
+  background: var(--social-links-color);
+
+}
+
+footer {
+  /* DEFINE DISTANCIA DO TOPO E LATERAIS */
+  padding: 24px 0;
+  /* ALINHA TEXTO AO MEIO */
+  text-align: center;
+  /* DEFINE TAMANHO DO TEXTO */
+  font-size: 15px;
+}
