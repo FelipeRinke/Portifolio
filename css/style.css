@@ -109,6 +109,7 @@ body * {
   /* DEFINE TAMANHO E COR E BORDA */
   width: 32px;
   height: 32px;
+  cursor: pointer;
   background: white var(--switch-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
